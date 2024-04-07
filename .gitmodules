@@ -1,0 +1,3 @@
+[submodule "wwwroot/lib/bootstrap"]
+	path = wwwroot/lib/bootstrap
+	url = https://github.com/twbs/bootstrap.git
