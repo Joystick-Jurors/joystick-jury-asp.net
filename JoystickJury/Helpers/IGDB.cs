@@ -49,7 +49,7 @@ namespace JoystickJury.Helpers
                 RequestUri = new Uri("https://api.igdb.com/v4/games/"),
                 Headers = { { "Client-ID", clientId }, { "Authorization", $"Bearer {authToken}" } },
                 Content = new StringContent(
-                    // Uses the expander on genres and platforms https://api-docs.igdb.com/#expander
+                    // Uses the expander on cover, genres, and platforms https://api-docs.igdb.com/#expander
                     $"fields name,cover.image_id,genres.name,first_release_date,platforms.name,updated_at; where id = {gameId};")
             };
 
@@ -92,10 +92,12 @@ namespace JoystickJury.Helpers
             return string.Join(", ", names!.Select(x => x.name));
         }
 
-        public static string BuildCoverUrl(string imageId, string size)
-        {
-            return $"https://images.igdb.com/igdb/image/upload/t_cover_{size}/{imageId}.jpg";
-        }
+        /// <param name="imageId">IGDB image hash (take from a Game)</param>
+        /// <param name="size">"big" or "small"</param>
+        /// <returns>Complete image URL usable in &lt;img&gt;</returns>
+        public static string BuildCoverUrl(string imageId, string size) => 
+            $"https://images.igdb.com/igdb/image/upload/t_cover_{size}/{imageId}.jpg";
+        
     }
 
     public class TwitchAuthResponse

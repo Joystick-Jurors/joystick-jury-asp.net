@@ -18,7 +18,7 @@ public class Game
     [NotMapped, Display(Name="Cover")]
     public string SmallCover => IGDB.BuildCoverUrl(IgdbCover, "small");
 
-	[NotMapped, Display(Name = "Cover")]
+	[NotMapped, Display(Name="Cover")]
     public string LargeCover => IGDB.BuildCoverUrl(IgdbCover, "big");
 
 	// "updated_at" field for determining whether an update is needed
