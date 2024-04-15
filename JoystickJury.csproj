@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UserSecretsId>aspnet-joystick_jury_asp.net-a7a4602e-fadf-45be-a388-bb5a4b32880d</UserSecretsId>
-    <RootNamespace>joystick_jury_asp.net</RootNamespace>
+    <RootNamespace>JoystickJury</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

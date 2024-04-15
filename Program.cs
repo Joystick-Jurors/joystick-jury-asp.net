@@ -1,4 +1,4 @@
-using joystick_jury_asp.net.Data;
+using JoystickJury.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

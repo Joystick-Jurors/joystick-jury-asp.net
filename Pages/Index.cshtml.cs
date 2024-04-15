@@ -1,7 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace joystick_jury_asp.net.Pages
+namespace JoystickJury.Pages
 {
 	public class IndexModel : PageModel
 	{

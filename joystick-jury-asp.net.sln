@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34316.72
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "joystick-jury-asp.net", "joystick-jury-asp.net.csproj", "{22C74EDC-6D71-43ED-BE7C-59C023F63597}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JoystickJury", "JoystickJury.csproj", "{22C74EDC-6D71-43ED-BE7C-59C023F63597}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

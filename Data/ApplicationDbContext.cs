@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace joystick_jury_asp.net.Data
+namespace JoystickJury.Data
 {
 	public class ApplicationDbContext : IdentityDbContext
 	{
