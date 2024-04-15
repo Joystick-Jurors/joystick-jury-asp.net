@@ -8,36 +8,35 @@ using Microsoft.EntityFrameworkCore;
 using JoystickJury.Data;
 using JoystickJury.Models;
 
-namespace JoystickJury.Pages.Games
+namespace JoystickJury.Pages.Games;
+
+public class DetailsModel : PageModel
 {
-    public class DetailsModel : PageModel
+    private readonly JoystickJury.Data.ApplicationDbContext _context;
+
+    public DetailsModel(JoystickJury.Data.ApplicationDbContext context)
     {
-        private readonly JoystickJury.Data.ApplicationDbContext _context;
+        _context = context;
+    }
 
-        public DetailsModel(JoystickJury.Data.ApplicationDbContext context)
+    public Game Game { get; set; } = default!;
+
+    public async Task<IActionResult> OnGetAsync(int? id)
+    {
+        if (id == null)
         {
-            _context = context;
+            return NotFound();
         }
 
-        public Game Game { get; set; } = default!;
-
-        public async Task<IActionResult> OnGetAsync(int? id)
+        var game = await _context.Game.FirstOrDefaultAsync(m => m.Id == id);
+        if (game == null)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var game = await _context.Game.FirstOrDefaultAsync(m => m.Id == id);
-            if (game == null)
-            {
-                return NotFound();
-            }
-            else
-            {
-                Game = game;
-            }
-            return Page();
+            return NotFound();
         }
+        else
+        {
+            Game = game;
+        }
+        return Page();
     }
 }

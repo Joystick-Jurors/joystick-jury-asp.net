@@ -8,22 +8,21 @@ using Microsoft.EntityFrameworkCore;
 using JoystickJury.Data;
 using JoystickJury.Models;
 
-namespace JoystickJury.Pages.Games
+namespace JoystickJury.Pages.Games;
+
+public class IndexModel : PageModel
 {
-    public class IndexModel : PageModel
+    private readonly JoystickJury.Data.ApplicationDbContext _context;
+
+    public IndexModel(JoystickJury.Data.ApplicationDbContext context)
     {
-        private readonly JoystickJury.Data.ApplicationDbContext _context;
+        _context = context;
+    }
 
-        public IndexModel(JoystickJury.Data.ApplicationDbContext context)
-        {
-            _context = context;
-        }
+    public IList<Game> Game { get;set; } = default!;
 
-        public IList<Game> Game { get;set; } = default!;
-
-        public async Task OnGetAsync()
-        {
-            Game = await _context.Game.ToListAsync();
-        }
+    public async Task OnGetAsync()
+    {
+        Game = await _context.Game.ToListAsync();
     }
 }
