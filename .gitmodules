@@ -1,3 +1,3 @@
-[submodule "wwwroot/lib/bootstrap"]
-	path = wwwroot/lib/bootstrap
+[submodule "JoystickJury/wwwroot/lib/bootstrap"]
+	path = JoystickJury/wwwroot/lib/bootstrap
 	url = https://github.com/twbs/bootstrap.git

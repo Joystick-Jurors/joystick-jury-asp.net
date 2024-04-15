@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace joystick_jury_asp.net.Data.Migrations
+namespace JoystickJury.Data.Migrations
 {
 	public partial class CreateIdentitySchema : Migration
 	{
