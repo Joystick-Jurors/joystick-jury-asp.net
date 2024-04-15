@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id:int?}"
 @model JoystickJury.Pages.Games.DetailsModel
 
 @{
@@ -38,15 +38,11 @@
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Game.Genres)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Game.Genres)
-        </dd>
+        <dd class="col-sm-10 multiline">@Html.DisplayFor(model => model.Game.Genres)</dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Game.Platforms)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Game.Platforms)
-        </dd>
+        <dd class="col-sm-10 multiline">@Html.DisplayFor(model => model.Game.Platforms)</dd>
     </dl>
 </div>
 <div>

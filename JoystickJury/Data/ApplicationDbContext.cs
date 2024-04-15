@@ -2,14 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using JoystickJury.Models;
 
-namespace JoystickJury.Data
+namespace JoystickJury.Data;
+
+public class ApplicationDbContext : IdentityDbContext
 {
-	public class ApplicationDbContext : IdentityDbContext
+	public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+		: base(options)
 	{
-		public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-			: base(options)
-		{
-		}
-	    public DbSet<JoystickJury.Models.Game> Game { get; set; } = default!;
 	}
+	public DbSet<JoystickJury.Models.Game> Game { get; set; } = default!;
 }

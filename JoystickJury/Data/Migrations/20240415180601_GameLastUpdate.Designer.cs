@@ -4,6 +4,7 @@ using JoystickJury.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JoystickJury.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240415180601_GameLastUpdate")]
+    partial class GameLastUpdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -33,8 +36,8 @@ namespace JoystickJury.Data.Migrations
                     b.Property<string>("Genres")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("IgdbCover")
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("IgdbCover")
+                        .HasColumnType("int");
 
                     b.Property<int>("IgdbId")
                         .HasColumnType("int");

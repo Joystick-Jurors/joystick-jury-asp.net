@@ -29,6 +29,10 @@ $primary: #981E32;
     font-family: 'Roboto Slab', serif;
 }
 
+.multiline {
+    white-space: pre-wrap;
+}
+
 // My styles come first...
 @import "../lib/bootstrap/scss/bootstrap.scss";
 

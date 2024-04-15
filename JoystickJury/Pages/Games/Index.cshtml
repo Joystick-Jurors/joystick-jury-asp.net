@@ -1,4 +1,6 @@
 ﻿@page
+@using JoystickJury.Helpers
+@using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.Blazor
 @model JoystickJury.Pages.Games.IndexModel
 
 @{
@@ -17,7 +19,7 @@
                 @Html.DisplayNameFor(model => model.Game[0].IgdbId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Game[0].IgdbCover)
+                @Html.DisplayNameFor(model => model.Game[0].SmallCover)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Game[0].ReleaseDate)
@@ -41,7 +43,8 @@
                 @Html.DisplayFor(modelItem => item.IgdbId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IgdbCover)
+	            @* @Html.DisplayFor(modelItem => item.IgdbCover) *@
+                <img src=@item.SmallCover alt="@($"{item.Name} cover art")">
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ReleaseDate)
@@ -49,12 +52,8 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Genres)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Platforms)
-            </td>
+            <td class="multiline">@Html.DisplayFor(modelItem => item.Genres)</td>
+            <td class="multiline">@Html.DisplayFor(modelItem => item.Platforms)</td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
