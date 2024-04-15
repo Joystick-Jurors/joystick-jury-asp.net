@@ -1,6 +1,7 @@
-using JoystickJury.Data;
+﻿using JoystickJury.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,8 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
 	.AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<JoystickJuryContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("JoystickJuryContext") ?? throw new InvalidOperationException("Connection string 'JoystickJuryContext' not found.")));
 
 var app = builder.Build();
 
