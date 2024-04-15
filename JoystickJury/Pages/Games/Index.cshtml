@@ -43,7 +43,6 @@
                 @Html.DisplayFor(modelItem => item.IgdbId)
             </td>
             <td>
-	            @* @Html.DisplayFor(modelItem => item.IgdbCover) *@
                 <img src=@item.SmallCover alt="@($"{item.Name} cover art")">
             </td>
             <td>
@@ -55,9 +54,11 @@
             <td class="multiline">@Html.DisplayFor(modelItem => item.Genres)</td>
             <td class="multiline">@Html.DisplayFor(modelItem => item.Platforms)</td>
             <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+	            <div class="btn-group-vertical">
+		            <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-outline-primary"><i class="fa-solid fa-pen-to-square"></i>Fudge Data</a>
+		            <a asp-page="./Details" asp-route-id="@item.Id" class="btn btn-outline-primary"><i class="fa-solid fa-print"></i>Details</a>
+		            <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i>Delete</a>
+	            </div>
             </td>
         </tr>
 }

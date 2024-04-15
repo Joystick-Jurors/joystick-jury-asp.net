@@ -16,10 +16,6 @@ $font-family-sans-serif: Ubuntu, -apple-system, BlinkMacSystemFont, "Segoe UI", 
 $primary: #CC0E00;
 $danger: #972D07;
 
-.control-label {
-    font-weight: 700;
-}
-
 .home-hero {
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../home-hero.jpg");
     background-repeat: no-repeat;
@@ -28,14 +24,10 @@ $danger: #972D07;
     min-height: 350px;
 }
 
-.navbar-brand {
-    font-weight: 700;
-    font-family: 'Roboto Slab', serif;
-}
-
 .multiline {
     white-space: pre-wrap;
 }
+
 
 // My styles come first...
 @import "../lib/bootstrap/scss/bootstrap.scss";
@@ -78,4 +70,36 @@ body {
     width: 100%;
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
+}
+
+/* More custom things
+-------------------------------------------------- */
+.navbar-brand {
+    font-weight: 700;
+    font-family: 'Roboto Slab', serif;
+    transition: color 0.3s ease 0s;
+}
+
+    .navbar-brand:hover {
+        color: #ddd; /*🔨🐧*/
+    }
+
+    .navbar-brand i {
+        margin-right: 0.2em;
+    }
+
+.btn {
+    display: inline-block;
+    height: 40px;
+    padding: 6px 12px;
+    white-space: nowrap; // Delete buttons were overflowing for some reason
+}
+
+    // Buttons with an icon and text
+    .btn i {
+        padding-right: 0.65em;
+    }
+
+.control-label {
+    font-weight: 700;
 }
