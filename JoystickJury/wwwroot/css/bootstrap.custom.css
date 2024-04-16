@@ -2,14 +2,6 @@
 /* Bootstrap overrides
 -------------------------------------------------- */
 @import "https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=Roboto+Slab:wght@700&display=swap";
-.home-hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url("../home-hero.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 350px;
-}
-
 .multiline {
   white-space: pre-wrap;
 }
