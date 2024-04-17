@@ -22,6 +22,7 @@ public class Game
     public string LargeCover => IGDB.BuildCoverUrl(IgdbCover, "big");
 
 	// "updated_at" field for determining whether an update is needed
+	// TODO: use this
 	[Display(Name="Last Updated on IGDB")]
 	public DateTimeOffset IgdbLastUpdate { get; set; }
 
@@ -31,4 +32,6 @@ public class Game
 	public string? Name { get; set; }
 	public string? Genres { get; set; }
 	public string? Platforms { get; set; }
+
+	public ICollection<Review> Reviews { get; set; }
 }

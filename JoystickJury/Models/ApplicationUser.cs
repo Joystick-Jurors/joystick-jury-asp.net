@@ -13,4 +13,5 @@ public class ApplicationUser : IdentityUser
     public byte[]? ProfilePicture { get; set; }
 
     // TODO: ICollection<Review>
+    public ICollection<Review> Reviews { get; set; }
 }
