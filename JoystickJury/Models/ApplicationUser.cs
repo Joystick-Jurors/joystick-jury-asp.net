@@ -12,6 +12,5 @@ public class ApplicationUser : IdentityUser
     // This is one of the image storage solutions of all time
     public byte[]? ProfilePicture { get; set; }
 
-    // TODO: ICollection<Review>
     public ICollection<Review> Reviews { get; set; }
 }

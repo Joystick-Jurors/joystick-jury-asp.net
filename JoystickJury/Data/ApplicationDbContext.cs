@@ -46,4 +46,6 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
             entity.ToTable("UserTokens");
         });
     }
+
+public DbSet<JoystickJury.Models.Review> Review { get; set; } = default!;
 }

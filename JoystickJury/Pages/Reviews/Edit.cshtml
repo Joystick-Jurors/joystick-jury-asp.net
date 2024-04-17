@@ -1,0 +1,60 @@
+﻿@page
+@model JoystickJury.Pages.Reviews.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Review</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Review.Id" />
+            <div class="form-group">
+                <label asp-for="Review.Title" class="control-label"></label>
+                <input asp-for="Review.Title" class="form-control" />
+                <span asp-validation-for="Review.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.Body" class="control-label"></label>
+                <input asp-for="Review.Body" class="form-control" />
+                <span asp-validation-for="Review.Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.StarRating" class="control-label"></label>
+                <input asp-for="Review.StarRating" class="form-control" />
+                <span asp-validation-for="Review.StarRating" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.Likes" class="control-label"></label>
+                <input asp-for="Review.Likes" class="form-control" />
+                <span asp-validation-for="Review.Likes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.Dislikes" class="control-label"></label>
+                <input asp-for="Review.Dislikes" class="form-control" />
+                <span asp-validation-for="Review.Dislikes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Review.LastUpdated" class="control-label"></label>
+                <input asp-for="Review.LastUpdated" class="form-control" />
+                <span asp-validation-for="Review.LastUpdated" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
