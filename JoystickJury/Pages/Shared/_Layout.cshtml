@@ -1,55 +1,87 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Joystick Jury</title>
-    <link rel="stylesheet" href="~/css/bootstrap.custom.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>@ViewData["Title"] - Joystick Jury</title>
+	<link rel="stylesheet" href="~/css/bootstrap.custom.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<script src="~/js/bs-darkmode.js"></script>
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index"><i class="fa-solid fa-gamepad"></i>Joystick Jury</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-	                    <li class="nav-item">
-		                    <a class="nav-link" asp-area="" asp-page="/Index">Home</a>
-	                    </li>
-	                    <li class="nav-item">
-		                    <a class="nav-link" asp-area="" asp-page="/Games/Index">Games</a>
-	                    </li>
-                        <li class="nav-item">
-                            <a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                    <partial name="_LoginPartial" />
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+	<header>
+		<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-primary border-bottom box-shadow mb-3">
+			<div class="container">
+				<a class="navbar-brand" asp-area="" asp-page="/Index"><i class="fa-solid fa-gamepad"></i>Joystick Jury</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+						aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+					<ul class="navbar-nav flex-grow-1">
+						<li class="nav-item">
+							<a class="nav-link" asp-area="" asp-page="/Index">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" asp-area="" asp-page="/Games/Index">Games</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
+						</li>
+					</ul>
+					<partial name="_LoginPartial" />
+					@* Stolen from Bootstrap docs page, which they encourage *@
+					<ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+						<li class="nav-item dropdown">
+							<button class="btn btn-link nav-link py-2 px-0 px-lg-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static" aria-label="Toggle theme (dark)">
+								<div class="theme-icon-active"><i class="fa-solid fa-moon"></i></div>
+								<span class="d-lg-none ms-2" id="bd-theme-text">Toggle theme</span>
+							</button>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="bd-theme-text">
+								<li>
+									<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+										<div class="bi me-2 opacity-50 theme-icon"><i class="fa-solid fa-sun"></i></div>
+										Light
+										<div class="bi ms-auto d-none theme-check"><i class="fa-solid fa-check"></i></div>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="dark" aria-pressed="true">
+										<div class="bi me-2 opacity-50 theme-icon"><i class="fa-solid fa-moon"></i></div>
+										Dark
+										<div class="bi ms-auto d-none theme-check"><i class="fa-solid fa-check"></i></div>
+									</button>
+								</li>
+								<li>
+									<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="auto" aria-pressed="false">
+										<div class="bi me-2 opacity-50 theme-icon"><i class="fa-solid fa-circle-half-stroke"></i></div>
+										Auto
+										<div class="bi ms-auto d-none theme-check"><i class="fa-solid fa-check"></i></div>
+									</button>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<main role="main" class="pb-3">
+			@RenderBody()
+		</main>
+	</div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - JoystickJury - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+	<footer class="border-top footer text-muted">
+		<div class="container">
+			&copy; 2024 - JoystickJury - <a asp-area="" asp-page="/Privacy">Privacy</a>
+		</div>
+	</footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+	<script src="~/lib/jquery/dist/jquery.min.js"></script>
+	<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+	<script src="~/js/site.js" asp-append-version="true"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+	@await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
