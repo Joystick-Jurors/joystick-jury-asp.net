@@ -1,3 +1,6 @@
 [submodule "JoystickJury/wwwroot/lib/bootstrap"]
 	path = JoystickJury/wwwroot/lib/bootstrap
 	url = https://github.com/twbs/bootstrap.git
+[submodule "JoystickJury/wwwroot/lib/bootstrap-star-rating"]
+	path = JoystickJury/wwwroot/lib/bootstrap-star-rating
+	url = https://github.com/kartik-v/bootstrap-star-rating.git
