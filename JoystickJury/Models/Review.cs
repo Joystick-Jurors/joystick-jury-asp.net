@@ -9,23 +9,24 @@ public class Review
 	[Required, StringLength(100)]
 	public string Title { get; set; }
 
-	[Required, StringLength(5000)]
+	[Required, StringLength(5000, ErrorMessage = "Whoa! Slow down there pal!")]
 	public string Body { get; set; }
 
-	[Required, Display(Name="Rating (# Stars)")]
-	public string StarRating { get; set; }
+	[Display(Name="Rating (# Stars)")]
+	public string? StarRating { get; set; }
 
-	public int Likes { get; set; }
+	public int? Likes { get; set; }
 
-	public int Dislikes { get; set; }
+	public int? Dislikes { get; set; }
 
-	public int CommunityRating => Likes - Dislikes;
+	public int? CommunityRating => Likes - Dislikes;
 
 	public DateTimeOffset LastUpdated { get; set; }
 
-	public Game Game { get; set; }
+	public Game? Game { get; set; }
 
-	public ApplicationUser User { get; set; }
+	// TODO: for some asinine reason, Index can't pull data from the author...
+	public ApplicationUser Author { get; set; }
 
-	// TODO: Eventually, comments
+    // TODO: Eventually, comments
 }

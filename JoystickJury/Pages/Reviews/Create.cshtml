@@ -2,7 +2,13 @@
 @model JoystickJury.Pages.Reviews.CreateModel
 
 @{
-    ViewData["Title"] = "Create";
+	ViewData["Title"] = "Create";
+}
+
+@section Styles {
+	@{
+		await Html.RenderPartialAsync("_StarRatingImportsPartial");
+	}
 }
 
 <h1>Create</h1>
@@ -10,50 +16,40 @@
 <h4>Review</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
-        <form method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Review.Title" class="control-label"></label>
-                <input asp-for="Review.Title" class="form-control" />
-                <span asp-validation-for="Review.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.Body" class="control-label"></label>
-                <input asp-for="Review.Body" class="form-control" />
-                <span asp-validation-for="Review.Body" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.StarRating" class="control-label"></label>
-                <input asp-for="Review.StarRating" class="form-control" />
-                <span asp-validation-for="Review.StarRating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.Likes" class="control-label"></label>
-                <input asp-for="Review.Likes" class="form-control" />
-                <span asp-validation-for="Review.Likes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.Dislikes" class="control-label"></label>
-                <input asp-for="Review.Dislikes" class="form-control" />
-                <span asp-validation-for="Review.Dislikes" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review.LastUpdated" class="control-label"></label>
-                <input asp-for="Review.LastUpdated" class="form-control" />
-                <span asp-validation-for="Review.LastUpdated" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Review.Title" class="control-label"></label>
+				<input asp-for="Review.Title" class="form-control" />
+				<span asp-validation-for="Review.Title" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Review.Body" class="control-label">Review Text (<a href="https://www.markdownguide.org/basic-syntax/">Markdown</a> supported)</label>
+				<textarea asp-for="Review.Body" class="form-control"></textarea>
+				<span asp-validation-for="Review.Body" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Review.StarRating" class="control-label"></label>
+				<input asp-for="Review.StarRating" name="StarRating" class="form-control rating rating-loading" data-min="0" data-max="5" data-step="0.5"/>
+				<span asp-validation-for="Review.StarRating" class="text-danger"></span>
+			</div>
+			<div>
+				User: <span>@await Model.UserManager.GetUserAsync(HttpContext.User)</span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Create" class="btn btn-primary" />
+			</div>
+		</form>
+	</div>
 </div>
 
 <div>
-    <a asp-page="Index">Back to List</a>
+	<a asp-page="Index">Back to List</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
 }

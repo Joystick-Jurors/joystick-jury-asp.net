@@ -13,4 +13,9 @@ public class ApplicationUser : IdentityUser
     public byte[]? ProfilePicture { get; set; }
 
     public ICollection<Review> Reviews { get; set; }
+
+    public override string ToString()
+    {
+	    return Nickname;
+    }
 }

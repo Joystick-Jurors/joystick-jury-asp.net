@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using JoystickJury.Data;
 using JoystickJury.Models;
+using Microsoft.Extensions.Primitives;
 
 namespace JoystickJury.Pages.Reviews
 {
@@ -50,7 +51,16 @@ namespace JoystickJury.Pages.Reviews
 
             _context.Attach(Review).State = EntityState.Modified;
 
-            try
+            // If rating is null, make it 0
+            var stars = HttpContext.Request.Form["StarRating"];
+            if (StringValues.IsNullOrEmpty(stars)) Review.StarRating = "0";
+
+            // whyyyy is this necessaryyyyy
+            Review.StarRating = stars;
+
+			Review.LastUpdated = DateTimeOffset.Now;
+
+			try
             {
                 await _context.SaveChangesAsync();
             }

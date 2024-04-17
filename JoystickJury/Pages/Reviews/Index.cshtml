@@ -28,9 +28,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.Review[0].Dislikes)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Review[0].LastUpdated)
-            </th>
+	        <th>
+		        @Html.DisplayNameFor(model => model.Review[0].LastUpdated)
+	        </th>
+	        <th>
+		        @Html.DisplayNameFor(model => model.Review[0].Author)
+	        </th>
             <th></th>
         </tr>
     </thead>
@@ -52,9 +55,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Dislikes)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastUpdated)
-            </td>
+	        <td>
+		        @Html.DisplayFor(modelItem => item.LastUpdated)
+	        </td>
+	        <td>
+		        @Html.DisplayFor(modelItem => item.Author)
+	        </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |

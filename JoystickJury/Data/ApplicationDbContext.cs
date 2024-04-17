@@ -7,11 +7,11 @@ namespace JoystickJury.Data;
 
 public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
 {
-	public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-		: base(options)
-	{
-	}
-	public DbSet<JoystickJury.Models.Game> Game { get; set; } = default!;
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        : base(options)
+    {
+    }
+    public DbSet<JoystickJury.Models.Game> Game { get; set; } = default!;
 
     protected override void OnModelCreating(ModelBuilder builder)
     {
@@ -47,5 +47,5 @@ public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
         });
     }
 
-public DbSet<JoystickJury.Models.Review> Review { get; set; } = default!;
+    public DbSet<JoystickJury.Models.Review> Review { get; set; } = default!;
 }

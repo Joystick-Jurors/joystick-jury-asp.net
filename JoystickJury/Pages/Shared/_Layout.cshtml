@@ -6,6 +6,7 @@
 	<title>@ViewData["Title"] - Joystick Jury</title>
 	<link rel="stylesheet" href="~/css/bootstrap.custom.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	@await RenderSectionAsync("Styles", false)
 	<script src="~/js/bs-darkmode.js"></script>
 </head>
 <body>
@@ -24,6 +25,9 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" asp-area="" asp-page="/Games/Index">Games</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" asp-area="" asp-page="/Reviews/Index">Reviews</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" asp-area="" asp-page="/Privacy">Privacy</a>
