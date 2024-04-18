@@ -12,7 +12,7 @@ public class ApplicationUser : IdentityUser
     // This is one of the image storage solutions of all time
     public byte[]? ProfilePicture { get; set; }
 
-    public ICollection<Review> Reviews { get; set; }
+    public ICollection<Review>? Reviews { get; set; }
 
     public override string ToString()
     {

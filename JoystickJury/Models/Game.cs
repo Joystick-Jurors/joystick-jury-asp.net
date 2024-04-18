@@ -33,5 +33,5 @@ public class Game
 	public string? Genres { get; set; }
 	public string? Platforms { get; set; }
 
-	public ICollection<Review> Reviews { get; set; }
+	public ICollection<Review>? Reviews { get; set; }
 }
