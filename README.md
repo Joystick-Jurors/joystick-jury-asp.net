@@ -7,7 +7,9 @@ This time around, main has some _branch protection_ rules set up so only @slauga
 ![this is literally 1984 austin how could you do this to us](https://preview.redd.it/1984-cropped-image-meme-v0-lg4jr38f277a1.jpg?width=640&crop=smart&auto=webp&s=0a59cdb0e22aa42d759eea18e6a4f40dc65f24fa)
 
 ### Running Locally
-[IGDB](https://api-docs.igdb.com/) connections will fail unless you have a Twitch developer client ID and secret defined on the host PC:
+I use [Visual Studio Community](https://visualstudio.microsoft.com/vs/community/) but there are probably ways to do it with VS Code or JetBrains Rider too...
+
+[IGDB](https://api-docs.igdb.com/) connections (only in the game creation page for now) will fail unless you have a Twitch developer client ID and secret defined on the host PC:
 1. [Register a Twitch application](https://api-docs.igdb.com/#account-creation). (Add `https://localhost` as a redirect URL and set it to Confidential.)
 2. Define an [environment variable](https://www.twilio.com/en-us/blog/how-to-set-environment-variables-html) `IGDB:ClientId` with your app's Client ID as its value.
 3. Define an environment variable `IGDB:ClientSecret` with your app's Client Secret as its value.
